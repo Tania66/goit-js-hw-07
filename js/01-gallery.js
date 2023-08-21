@@ -31,6 +31,8 @@ galleryContainer.insertAdjacentHTML('beforeend' , galleryItemsList);
 
 galleryContainer.addEventListener('click' , onGalleryContainerClick);
 
+
+
 function onGalleryContainerClick(event) {  
     event.preventDefault();
 
@@ -44,13 +46,17 @@ function onGalleryContainerClick(event) {
 
 instance.show()
 
+galleryContainer.addEventListener("keydown", onKeyEscape);
 
-
-galleryContainer.addEventListener("keydown", (event) => {
-
-if (event.code === 'Escape') {
+function onKeyEscape(event) {
+ if (event.code === 'Escape') {
    instance.close();
+    galleryContainer.removeEventListener('keydown' , onKeyEscape)   
     }
-});
+}
 
 }
+
+
+
+

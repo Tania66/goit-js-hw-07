@@ -25,4 +25,10 @@ function createGalleryItems (items){
 }
 
 
-const lightbox = new SimpleLightbox('.gallery a', { captionData: 'alt',  captionDelay: 250});
+let lightbox = new SimpleLightbox('.gallery a', {
+   captionDelay: 250,
+   captions: true,
+   captionsData: 'alt',
+ });
+
+ 
